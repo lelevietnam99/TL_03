@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 1: Hiện Tượng Luận Về Thân Và Cảnh - Sườn Bài 3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #050714;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(112, 0, 255, 0.22) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(0, 212, 255, 0.18) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(15, 10, 35, 0.95) 0%, #03050c 100%);
+            background-attachment: fixed;
+            color: #e2e8f0;
+            line-height: 1.85;
+            padding: 40px 20px;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng nền sao vũ trụ */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 90px 40px, rgba(255,255,255,0.9), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 160px 120px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 230px 190px, rgba(168, 85, 247, 0.9), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 310px 250px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 450px 120px, rgba(56, 189, 248, 0.9), rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 500px 500px;
+            opacity: 0.65;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Main Essay Card */
+        .essay-card {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 24px;
+            padding: 45px 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(112, 0, 255, 0.12);
+        }
+
+        /* Section Header */
+        .section-badge {
+            display: inline-block;
+            padding: 6px 18px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: #38bdf8;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+
+        h1.chapter-main-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 0%, #c084fc 50%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            line-height: 1.35;
+        }
+
+        h2.section-sub-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #38bdf8;
+            margin: 35px 0 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3.part-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #c084fc;
+            margin: 22px 0 12px 0;
+        }
+
+        /* Content Paragraphs */
+        p.content-p {
+            font-size: 1.02rem;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* Superscript styling for footnote references */
+        sup {
+            color: #38bdf8;
+            font-weight: 700;
+            font-size: 0.8rem;
+            margin-left: 2px;
+            cursor: pointer;
+        }
+
+        /* Lists */
+        ul.custom-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 22px;
+        }
+
+        ul.custom-list li {
+            position: relative;
+            padding-left: 26px;
+            margin-bottom: 12px;
+            color: #cbd5e1;
+            font-size: 1.02rem;
+        }
+
+        ul.custom-list li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: #a855f7;
+            font-size: 0.85rem;
+            top: 2px;
+        }
+
+        /* Diagram Box */
+        .diagram-container {
+            background: rgba(10, 15, 30, 0.7);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 20px;
+            padding: 28px 20px;
+            margin: 35px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            font-family: monospace;
+            font-size: 0.88rem;
+            color: #c084fc;
+            overflow-x: auto;
+            white-space: pre;
+            line-height: 1.5;
+        }
+
+        /* Table Styling */
+        .table-container {
+            overflow-x: auto;
+            margin: 25px 0;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background: rgba(112, 0, 255, 0.2);
+            color: #38bdf8;
+            padding: 14px 18px;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        td {
+            padding: 14px 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.4);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        /* Footnotes Section */
+        .footnotes-section {
+            margin-top: 45px;
+            padding-top: 22px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.15);
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        .footnotes-header {
+            font-weight: 600;
+            color: #cbd5e1;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footnote-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footnote-item {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            line-height: 1.65;
+        }
+
+        .footnote-item::before {
+            content: attr(data-num);
+            position: absolute;
+            left: 0;
+            color: #38bdf8;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-top: 35px;
+        }
+
+        @media (max-width: 768px) {
+            .essay-card {
+                padding: 25px 20px;
+            }
+            h1.chapter-main-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <article class="essay-card">
+            <span class="section-badge">Nội Dung Chính • Sườn Bài 3</span>
+            <h1 class="chapter-main-title">CHƯƠNG 1: HIỆN TƯỢNG LUẬN VỀ THÂN VÀ CẢNH DƯỚI LĂNG KÍNH VIVARTAVĀDA CỦA ŚAṄKARĀCĀRYA</h1>
+
+            <!-- 1.1 -->
+            <section>
+                <h2 class="section-sub-title">1.1. Bản chất Hiện tượng luận của Cõi huyễn (Jagat / Mithyā) và Cơ chế Phóng chiếu Māyā</h2>
+                
+                <p class="content-p">
+                    Trong hệ thống Advaita Vedānta do đại sư Śaṅkarācārya (Thương Yết La, 788–820) hệ thống hóa, thuật ngữ A-dvaita mang nghĩa ngữ âm là "không hai" (Nhất nguyên vô biệt), đại diện cho khuynh hướng bản thể luận siêu hình tuyệt đối<sup>1</sup>. Để giải thích sự xuất hiện của vũ trụ hữu hình trước mắt con người mà không làm tổn hại đến tính chất duy nhất, bất biến và thuần khiết của Nirguṇa Brahman (Phạm thiên Vô phẩm chất), Śaṅkarācārya đã phát triển học thuyết Vivartavāda (Huyễn mộng luận / Biến dịch ảo giác)<sup>2</sup>.
+                </p>
+
+                <h3 class="part-title">a. Định vị Hiện tượng luận cõi Jagat dưới dạng Mithyā</h3>
+                <p class="content-p">
+                    <strong>Khái niệm Jagat (Thế giới hiện tượng):</strong> Jagat đại diện cho toàn bộ cõi thế gian hữu hình—nơi chứa đựng vạn vật, các quy luật tự nhiên, thời gian, không gian và các sinh thể cảm thấu.
+                </p>
+                <p class="content-p">
+                    <strong>Thực tính Mithyā (Huyễn giả / Ảo ảnh):</strong> Dưới lăng kính hiện tượng luận Vedānta, Jagat không phải là một thực tại độc lập mà được định danh là Mithyā. Cần lưu ý rằng Mithyā không mang ý nghĩa hoàn toàn bằng không như "sừng thỏ" hay "hoa đốm giữa hư không" (Asat - Tuyệt đối không thực). Thế giới hiện tượng vẫn hiện hữu về mặt trải nghiệm giác quan thế tục, nhưng nó là Mithyā vì mang tính vô thường, không có tự tánh cố định và phụ thuộc hoàn toàn vào nền bản thể Brahman.
+                </p>
+
+                <!-- Diagram sơ đồ Māyā & Jagat -->
+                <div class="diagram-container">
+               BẢN THỂ TỐI HẬU: NIRGUṄA BRAHMAN
+                     (Thực tại Tuyệt đối)
+                              │
+                              ▼
+                   NĂNG LỰC HẠN LƯỢNG MĀYĀ
+            ┌─────────────────┴─────────────────┐
+            ▼                                   ▼
+  Āvaraṇa-śakti (Che đậy)             Vikṣepa-śakti (Phóng chiếu)
+            │                                   │
+            └─────────────────┬─────────────────┘
+                              │
+                              ▼
+                 CÕI MỘNG HIỆN TƯỢNG: JAGAT / MITHYĀ
+                (Thực tại Tương đối Vyāvahārika)
+                </div>
+
+                <h3 class="part-title">b. Hai công năng hiện tượng luận của Māyā</h3>
+                <p class="content-p">
+                    Sự khởi sinh của cõi mộng Jagat vận hành dựa trên hai công năng nhận thức luận của năng lực Māyā<sup>3</sup>:
+                </p>
+                <ul class="custom-list">
+                    <li>
+                        <strong>Āvaraṇa-śakti (Công năng che đậy):</strong> Làm mờ che thực tính bất nhị của Brahman, khiến tâm thức con người rơi vào bóng tối Vô minh (Avidyā), không còn nhận biết được Bản thể chân thật bản hữu.
+                    </li>
+                    <li>
+                        <strong>Vikṣepa-śakti (Công năng phóng chiếu):</strong> Từ sự che đậy đó, Māyā tiếp tục đóng vai trò là một "ảo thuật gia" (Līlā - trò tiêu khiển của Đấng Hóa công Īśvara), phóng chiếu ra vô số hình tướng (Rūpa), tên gọi (Nāma), tạo nên thế giới đa dạng và phức tạp trước giác quan con người.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 1.2 -->
+            <section>
+                <h2 class="section-sub-title">1.2. Hiện tượng luận về Thân (Annamaya-kośa) và Cảnh (Vyāvahārika-satya): Cơ chế Cưỡng gán (Adhyāsa)</h2>
+                
+                <h3 class="part-title">a. Hiện tượng luận về Thân xác – Lớp vỏ vật chất thô (Annamaya-kośa)</h3>
+                <p class="content-p">
+                    Dưới góc nhìn giải phẫu hiện tượng luận của Śaṅkarācārya, thân xác con người (Thân vật lý) chỉ là Annamaya-kośa—lớp vỏ che đậy do thực phẩm cấu thành. Thân xác chịu sự chi phối sinh lý thô rác: sinh ra, lớn lên, già yếu, bệnh tật và phân rã về với các đại vật chất. Hiện tượng luận Vedānta chỉ ra rằng: Thân xác hoàn toàn là một đối tượng bị nhận thức (Sở tri / Upādhi), hoàn toàn không phải là Chủ thể nhận thức hằng hữu (Ātman).
+                </p>
+
+                <h3 class="part-title">b. Hiện tượng luận về Cảnh giới – Thực tại Thế tục tương đối (Vyāvahārika-satya)</h3>
+                <p class="content-p">
+                    Cảnh đại diện cho toàn bộ môi trường sống, hoàn cảnh xã hội và các đối tượng nhận thức bên ngoài. Advaita Vedānta xếp toàn bộ cõi Cảnh vào cấp độ Vyāvahārika-satya (Thực tại tương đối / Thế tục đế)<sup>4</sup>: Ở cấp độ này, các quy luật nhân quả, hoạt động sinh hoạt, tu tập hay thiền định đều có giá trị thực tiễn và tính hiệu dụng đối với con người khi còn sống trong ảo giác Māyā. Tuy nhiên, khi nhìn từ cấp độ Chân đế (Pāramārthika-satya), toàn bộ cõi Cảnh này chỉ là bóng dáng huyễn mộng, sinh diệt không ngừng.
+                </p>
+
+                <!-- Bảng 3 Cấp độ thực tại -->
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cấp độ Thực tại (Sattā)</th>
+                                <th>Bản chất Hiện tượng luận</th>
+                                <th>Ví dụ minh họa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Prātibhāsika-satya</strong></td>
+                                <td>Ảo giác chủ quan chốc lát nơi cá nhân.</td>
+                                <td>Giấc mộng khi ngủ, nhìn dây thừng tưởng con rắn (Rajju-sarpa).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Vyāvahārika-satya</strong></td>
+                                <td>Cõi hiện tượng tương đối thế tục (Thân & Cảnh).</td>
+                                <td>Thân xác ngũ uẩn, quy luật xã hội, thế giới vật chất thường nhật.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pāramārthika-satya</strong></td>
+                                <td>Thực tại Bất nhị Tuyệt đối hằng hữu.</td>
+                                <td>Bản thể Nirguṇa Brahman / Ātman.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="part-title">c. Cơ chế Cưỡng gán / Áp đặt Điên đảo (Adhyāsa)</h3>
+                <p class="content-p">
+                    Nguồn gốc tạo nên nỗi khổ đau hiện sinh của con người chính là Adhyāsa—sự cưỡng gán hay áp đặt nhầm lẫn giữa Chủ thể thực tồn (Ātman) và Đối tượng huyễn giả (Thân & Cảnh).
+                </p>
+                <p class="content-p">
+                    <strong>Thí dụ Ẩn dụ "Dây tưởng Rắn" (Rajju-sarpa):</strong> Trong bóng chiều chạng vạng, một người nhìn thấy sợi dây thừng cuộn tròn liền khiêu khích nỗi sợ hãi vì áp đặt tưởng đó là con rắn độc. Con rắn ảo giác (Prātibhāsika) không hề thực tồn, nhưng cảm giác sợ hãi của người nhìn hoàn toàn là thật. Khi ngọn đèn trí tuệ (Jñāna) được chiếu soi, con rắn ảo giác biến mất; người đó nhận ra sợi dây thừng bản thể vẫn nguyên vẹn. Tương tự, do Adhyāsa, con người lầm tưởng các trạng thái đau đớn, sinh lão bệnh tử của Thân và sự hơn thua của Cảnh là thuộc về Chân ngã Ātman, từ đó chịu trôi lăn trong sinh tử.
+                </p>
+            </section>
+
+            <!-- 1.3 -->
+            <section>
+                <h2 class="section-sub-title">1.3. Phủ định Thân và Cảnh qua Tri kiến Neti Neti để ngộ nhập Bản thể Nirguṇa Brahman</h2>
+                
+                <h3 class="part-title">a. Tiến trình bóc tách phủ định (Via Negativa)</h3>
+                <p class="content-p">
+                    Để tháo gỡ sự trói buộc của Adhyāsa nơi Thân và Cảnh, Śaṅkarācārya đề xướng phương pháp luận phủ định Neti, Neti ("Không phải cái này, không phải cái kia")<sup>5</sup>: Mọi nỗ lực định nghĩa Thực tại Tuyệt đối bằng các thuộc tính của Thân và Cảnh đều làm hạ thấp Brahman xuống hàng đối tượng bị hạn lượng. Hành giả sử dụng lưỡi dao biện chứng Neti Neti để liên tục bóc tách: Thân xác này không phải Ātman (Neti), Cảnh giới thế gian này không phải Ātman (Neti), cảm xúc buồn vui này không phải Ātman (Neti).
+                </p>
+
+                <h3 class="part-title">b. Trực nhận Đại ngôn mệnh đề (Mahāvākya) và Giải thoát Mokṣa</h3>
+                <p class="content-p">
+                    Khi mọi lớp vỏ bọc Pañca-kośa và các yếu tố gán ghép Upādhi của Thân và Cảnh bị gạt bỏ hoàn toàn, tâm thức bừng sáng sự trực nhận Bất nhị: "Aham Brahmāsmi" (Ta chính là Brahman).
+                </p>
+
+                <!-- Diagram Mục tiêu Giải thoát Mokṣa -->
+                <div class="diagram-container">
+========================================================================================
+MỤC TIÊU GIẢI THOÁT (MOKṢA) THEO ŚAṄKARĀCĀRYA
+========================================================================================
+• Phủ định Thân & Cảnh ──► Bóc tách ảo ảnh Māyā và cơ chế cưỡng gán Adhyāsa.
+• Trực nhận Bản thể ──► Ngộ nhập Ātman đồng nhất trọn vẹn với Nirguṇa Brahman.
+• Trạng thái Mokṣa ──► Sự nhận ra (Realization) thực tại bản hữu, trở thành bậc
+                         giải thoát tự tại ngay trong đời sống hiện tại (Jīvanmukti).
+========================================================================================
+                </div>
+
+                <p class="content-p">
+                    Śaṅkarācārya nhấn mạnh rằng giải thoát (Mokṣa) không phải là việc phá hủy thế giới vật chất hay chạy trốn khỏi thân xác, mà là sự chuyển hóa nhận thức luận tuyệt đối. Bậc giải thoát đương sinh (Jīvanmukta) vẫn mang thân xác và sống giữa cõi đời (Vyāvahārika), nhưng tâm thức hoàn toàn tự tại, thấu suốt Thân và Cảnh chỉ là bóng dáng mộng ảo, không còn bị bất kỳ ảo ảnh Māyā nào trói buộc.
+                </p>
+            </section>
+
+            <!-- Footnotes -->
+            <div class="footnotes-section">
+                <div class="footnotes-header">
+                    <span>📌 CHÚ THÍCH & TRÍCH DẪN NGUỒN (FOOTNOTES CHO CHƯƠNG 1 - SƯỜN BÀI 3)</span>
+                </div>
+                <ul class="footnote-list">
+                    <li class="footnote-item" data-num="1">
+                        Lê Xuân Khoa (1972), Nhập môn Triết học Ấn Độ, NXB Trung tâm Học liệu Bộ Giáo dục, Sài Gòn, tr. 185–192; đối chiếu bài giảng "1. Buổi 1 (18-01-2026).mp3" & "2. Buổi 2 (ngày 18-01-2026).mp3".
+                    </li>
+                    <li class="footnote-item" data-num="2">
+                        Śaṅkarācārya, Brahmasūtra-bhāṣya (Chú giải Kinh Brahma), Adhyāya 1, Pāda 1; xem thêm Swami Gambhirananda (dịch) (1965), Brahma Sutra Bhasya of Shankaracharya, Advaita Ashrama, Kolkata, tr. 14–25; đối chiếu bài giảng "2. Buổi 2 (ngày 18-01-2026).mp3" & "3. Buổi 3 (ngày 31-3-2026).mp3".
+                    </li>
+                    <li class="footnote-item" data-num="3">
+                        Śaṅkarācārya, Vivekacūḍāmaṇi (Trí tuệ minh châu kim cương), Kārikā 108–115; đối chiếu bài giảng "3. Buổi học ngày 21-9-2026.mp3" & "6. Buổi 6 (8-4-2026).mp3".
+                    </li>
+                    <li class="footnote-item" data-num="4">
+                        Radhakrishnan, S. (1999), Indian Philosophy, Vol. 2, Oxford University Press, New Delhi, tr. 480–492; đối chiếu bài giảng "2. Buổi học ngày 16-9-2026.mp3".
+                    </li>
+                    <li class="footnote-item" data-num="5">
+                        Viện Triết học (2004), Lịch sử Triết học Phương Đông, NXB Chính trị Quốc gia, Hà Nội, tr. 312–318; đối chiếu bài giảng "3. Buổi học ngày 21-9-2026.mp3".
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+        <footer>
+            <p>© Giao diện đọc tiểu luận trực tuyến • Cosmic Theme</p>
+        </footer>
+    </div>
+
+</body>
+</html>
